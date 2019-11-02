@@ -873,9 +873,10 @@ GameObject:
   - component: {fileID: 554324328}
   - component: {fileID: 554324329}
   - component: {fileID: 554324330}
+  - component: {fileID: 554324331}
   m_Layer: 0
   m_Name: Log
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -970,7 +971,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554324324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1025,11 +1026,44 @@ MonoBehaviour:
   health: 2
   enemyName: Larre the Log
   baseAttack: 1
-  moveSpeed: 1.5
+  moveSpeed: 3
   target: {fileID: 778948291}
   chaseRadius: 4
-  attackRadius: 2
+  attackRadius: 1
   homePosition: {fileID: 0}
+--- !u!60 &554324331
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554324324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.09998703, y: -0.1323967}
+      - {x: -0.28285217, y: -0.12096882}
+      - {x: -0.31018066, y: -0.26694965}
+      - {x: -0.28263092, y: -0.5561514}
+      - {x: 0.3203392, y: -0.5561514}
+      - {x: 0.34132195, y: -0.49342918}
+      - {x: 0.32310104, y: -0.339386}
+      - {x: 0.3216114, y: -0.1323967}
 --- !u!1 &778948288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,6 +1078,7 @@ GameObject:
   - component: {fileID: 778948293}
   - component: {fileID: 778948292}
   - component: {fileID: 778948294}
+  - component: {fileID: 778948295}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1199,6 +1234,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &778948295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778948288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe74978b2dc72448b0b4b213b7f5ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 1.5
 --- !u!1 &832855871
 GameObject:
   m_ObjectHideFlags: 0
