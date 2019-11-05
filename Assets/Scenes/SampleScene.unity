@@ -1023,13 +1023,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d142929c8c596441ba837ebc4977a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
   health: 2
   enemyName: Larre the Log
   baseAttack: 1
   moveSpeed: 3
+  animator: {fileID: 0}
   target: {fileID: 778948291}
   chaseRadius: 4
-  attackRadius: 1
+  attackRadius: 1.5
   homePosition: {fileID: 0}
 --- !u!60 &554324331
 PolygonCollider2D:

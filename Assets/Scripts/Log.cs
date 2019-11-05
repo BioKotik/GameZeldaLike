@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Log : Enemy
 {
+    private Rigidbody2D rb;
+    public Animator animator;
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
@@ -12,6 +14,9 @@ public class Log : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        currentState = EnemyState.idle;
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
     }
 
@@ -27,7 +32,15 @@ public class Log : Enemy
             && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            ChangeState(EnemyState.walk);
+        }
+    }
 
+    private void ChangeState(EnemyState newState)
+    {
+        if (currentState != newState)
+        {
+            currentState = newState;
         }
     }
 }
