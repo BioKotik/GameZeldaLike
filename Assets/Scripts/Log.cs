@@ -21,7 +21,7 @@ public class Log : Enemy
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         CheckDistance();    
     }
@@ -31,8 +31,12 @@ public class Log : Enemy
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius
             && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-            ChangeState(EnemyState.walk);
+            if (currentState == EnemyState.idle || currentState == EnemyState.walk)
+            {
+                Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+                rb.MovePosition(temp);
+                ChangeState(EnemyState.walk);               
+            }
         }
     }
 

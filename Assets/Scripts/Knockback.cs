@@ -16,13 +16,10 @@ public class Knockback : MonoBehaviour
             if(enemy != null)
             {
                 enemy.GetComponent<Enemy>().currentState = EnemyState.stagger;
-                enemy.isKinematic = false;
                 Vector2 difference = enemy.transform.position - transform.position;
                 difference = difference.normalized * thrust;
                 enemy.AddForce(difference, ForceMode2D.Impulse);
-                enemy.isKinematic = true;
-                StartCoroutine(Knock(enemy));
-                
+                StartCoroutine(Knock(enemy));  
             }
         }
     }
