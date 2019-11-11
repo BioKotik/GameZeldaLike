@@ -1,6 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Knockback
+    - Log
     - MoveCamera
     - MovePlayer
     - PlayerHit
@@ -95,27 +97,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10498}
     - Class: 114
-      Script: {instanceID: 10536}
+      Script: {instanceID: 10538}
     - Class: 114
-      Script: {instanceID: 10666}
+      Script: {instanceID: 10668}
     - Class: 114
-      Script: {instanceID: 11046}
+      Script: {instanceID: 10748}
     - Class: 114
-      Script: {instanceID: 11110}
+      Script: {instanceID: 10854}
     - Class: 114
-      Script: {instanceID: 11142}
+      Script: {instanceID: 11052}
     - Class: 114
-      Script: {instanceID: 11204}
+      Script: {instanceID: 11116}
     - Class: 114
-      Script: {instanceID: 11294}
+      Script: {instanceID: 11148}
     - Class: 114
-      Script: {instanceID: 11332}
+      Script: {instanceID: 11210}
     - Class: 114
-      Script: {instanceID: 11436}
+      Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 11630}
+      Script: {instanceID: 11338}
     - Class: 114
-      Script: {instanceID: 11700}
+      Script: {instanceID: 11442}
+    - Class: 114
+      Script: {instanceID: 11636}
+    - Class: 114
+      Script: {instanceID: 11706}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -137,6 +143,8 @@ ScriptsOnlyBuild:
     - Class: 156049354
       Script: {instanceID: 0}
     - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 687078895
       Script: {instanceID: 0}
     - Class: 1839735485
       Script: {instanceID: 0}
@@ -395,6 +403,12 @@ ScriptsOnlyBuild:
     className: RoomTransfer
   - hash:
       serializedVersion: 2
+      Hash: 010808acdeae266c54160c48a63e5890
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Enemy
+  - hash:
+      serializedVersion: 2
       Hash: 02645cd2809521863e990f79b565042a
     assemblyName: Assembly-CSharp.dll
     namespaceName: Tiled2Unity
@@ -443,6 +457,12 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
+      Hash: b67f1bd1abfbbb27f056d4159ff75ae5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Knockback
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -465,6 +485,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 878a8338cb97a9a757ffc298f49db9d4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Log
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -708,4 +734,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/5/Game Zelda Like.exe
+  playerPath: D:/try/Game Zelda Like.exe

@@ -253,9 +253,10 @@ GameObject:
   - component: {fileID: 211752217}
   - component: {fileID: 211752218}
   - component: {fileID: 211752219}
+  - component: {fileID: 211752220}
   m_Layer: 0
   m_Name: DownHitBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -319,6 +320,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff08bc109d31a746b7285b2585c3c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &211752220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211752216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe74978b2dc72448b0b4b213b7f5ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.2
 --- !u!1 &214204627
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,9 +598,10 @@ GameObject:
   - component: {fileID: 368559334}
   - component: {fileID: 368559335}
   - component: {fileID: 368559336}
+  - component: {fileID: 368559337}
   m_Layer: 0
   m_Name: UpHitBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -650,6 +666,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff08bc109d31a746b7285b2585c3c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &368559337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368559333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe74978b2dc72448b0b4b213b7f5ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +904,8 @@ GameObject:
   - component: {fileID: 554324329}
   - component: {fileID: 554324330}
   - component: {fileID: 554324331}
+  - component: {fileID: 554324332}
+  - component: {fileID: 554324333}
   m_Layer: 0
   m_Name: Log
   m_TagString: Enemy
@@ -971,13 +1003,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554324324}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0043845177, y: -0.46049976}
+  m_Offset: {x: -0.0043845177, y: -0.41252232}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -988,7 +1020,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6053457, y: 0.42991638}
+  m_Size: {x: 0.6053457, y: 0.6927185}
   m_EdgeRadius: 0
 --- !u!50 &554324329
 Rigidbody2D:
@@ -998,17 +1030,17 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554324324}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &554324330
@@ -1023,14 +1055,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d142929c8c596441ba837ebc4977a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
   health: 2
-  enemyName: Larre the Log
+  enemyName: Larry the Log
   baseAttack: 1
-  moveSpeed: 3
+  moveSpeed: 2
   target: {fileID: 778948291}
   chaseRadius: 4
-  attackRadius: 1
+  attackRadius: 1.2
   homePosition: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!60 &554324331
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1038,7 +1072,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554324324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1064,6 +1098,46 @@ PolygonCollider2D:
       - {x: 0.34132195, y: -0.49342918}
       - {x: 0.32310104, y: -0.339386}
       - {x: 0.3216114, y: -0.1323967}
+--- !u!61 &554324332
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554324324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0030345917, y: -0.24640656}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7306137, y: 1.1072483}
+  m_EdgeRadius: 0
+--- !u!114 &554324333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554324324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe74978b2dc72448b0b4b213b7f5ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.2
 --- !u!1 &778948288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,20 +1308,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &778948295
-MonoBehaviour:
+--- !u!61 &778948295
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778948288}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fe74978b2dc72448b0b4b213b7f5ff3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrust: 2
-  knockTime: 1.5
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.19331646}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5411186, y: 0.9150677}
+  m_EdgeRadius: 0
 --- !u!1 &832855871
 GameObject:
   m_ObjectHideFlags: 0
@@ -10303,9 +10389,10 @@ GameObject:
   - component: {fileID: 1404591875}
   - component: {fileID: 1404591876}
   - component: {fileID: 1404591877}
+  - component: {fileID: 1404591878}
   m_Layer: 0
   m_Name: RightHitBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10370,6 +10457,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff08bc109d31a746b7285b2585c3c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1404591878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404591874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe74978b2dc72448b0b4b213b7f5ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.2
 --- !u!1001 &1465446220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13416,9 +13517,10 @@ GameObject:
   - component: {fileID: 1879616098}
   - component: {fileID: 1879616099}
   - component: {fileID: 1879616100}
+  - component: {fileID: 1879616101}
   m_Layer: 0
   m_Name: LeftHitBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13485,6 +13587,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff08bc109d31a746b7285b2585c3c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1879616101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879616097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe74978b2dc72448b0b4b213b7f5ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 2
+  knockTime: 0.2
 --- !u!1001 &1958629303
 PrefabInstance:
   m_ObjectHideFlags: 0
