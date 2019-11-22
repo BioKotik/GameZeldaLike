@@ -20,8 +20,8 @@ public class Signal : ScriptableObject
         listeners.Add(listener);
     }
 
-    public void DeRegisterListener()
+    public void DeRegisterListener(SignalListener listener)
     {
-
+        listeners.Remove(listener);
     }
 }
