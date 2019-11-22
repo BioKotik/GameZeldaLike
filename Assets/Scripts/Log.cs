@@ -52,9 +52,45 @@ public class Log : Enemy
             if (currentState == EnemyState.idle || currentState == EnemyState.walk
                 && currentState != EnemyState.stagger)
             {
+                anim.SetBool("WakeUp", true);
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+                ChangeAnim(temp - transform.position);
                 rb.MovePosition(temp);
                 ChangeState(EnemyState.walk);
+            }
+        }
+        else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
+            anim.SetBool("WakeUp", false);
+    }
+
+    private void SetAnimFloat(Vector2 vector2)
+    {
+        anim.SetFloat("MoveX", vector2.x);
+        anim.SetFloat("MoveY", vector2.y);
+    }
+
+    private void ChangeAnim(Vector2 direction)
+    {
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            if (direction.x > 0)
+            {
+                SetAnimFloat(Vector2.right);
+            }
+            else if (direction.x < 0)
+            {
+                SetAnimFloat(Vector2.left);
+            }
+        }
+        else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
+        {
+            if (direction.y > 0)
+            {
+                SetAnimFloat(Vector2.up);
+            }
+            else if (direction.y < 0)
+            {
+                SetAnimFloat(Vector2.down);
             }
         }
     }

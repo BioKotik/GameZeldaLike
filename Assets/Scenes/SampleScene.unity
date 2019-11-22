@@ -334,6 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2
   knockTime: 0.2
+  damage: 1
 --- !u!1 &214204627
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2
   knockTime: 0.2
+  damage: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,10 +1058,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  maxHealth: {fileID: 11400000, guid: 8bf920bf783d3634d8d9330bcb3153e9, type: 2}
   health: 2
   enemyName: Larry the Log
   baseAttack: 1
-  moveSpeed: 2
+  moveSpeed: 1.5
   target: {fileID: 778948291}
   chaseRadius: 4
   attackRadius: 1.2
@@ -1111,7 +1114,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0030345917, y: -0.24640656}
+  m_Offset: {x: -0.0011396408, y: -0.26727676}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1122,7 +1125,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7306137, y: 1.1072483}
+  m_Size: {x: 0.65548134, y: 1.0655079}
   m_EdgeRadius: 0
 --- !u!114 &554324333
 MonoBehaviour:
@@ -1138,6 +1141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2
   knockTime: 0.2
+  damage: 0
 --- !u!1 &778948288
 GameObject:
   m_ObjectHideFlags: 0
@@ -10471,6 +10475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2
   knockTime: 0.2
+  damage: 1
 --- !u!1001 &1465446220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13601,6 +13606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2
   knockTime: 0.2
+  damage: 1
 --- !u!1001 &1958629303
 PrefabInstance:
   m_ObjectHideFlags: 0
