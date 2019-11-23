@@ -80,11 +80,16 @@ public class MovePlayer : MonoBehaviour
 
     public void Knock(float knockTime, float damage)
     {
-        currentHealth.initialValue -= damage;
-        if (currentHealth.initialValue > 0)
+        currentHealth.runtimeValue -= damage;
+        playerHealthSignal.Raise();
+
+        if (currentHealth.runtimeValue > 0)
         {
-            playerHealthSignal.Raise();
             StartCoroutine(KnockCo(knockTime));         
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
         }
     }
 
