@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - FloatValue
+    - HeartManager
     - Knockback
     - Log
     - MoveCamera
@@ -10,6 +11,8 @@ ScriptsOnlyBuild:
     - Pot
     - RoomTransfer
     - Sign
+    - Signal
+    - SignalListener
     - Tiled2Unity.ObjectLayer
     - Tiled2Unity.PolygonObject
     - Tiled2Unity.RectangleObject
@@ -25,10 +28,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -38,6 +39,7 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.Outline
     - UnityEngine.UI.Text
@@ -86,47 +88,55 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9710}
     - Class: 114
-      Script: {instanceID: 9876}
+      Script: {instanceID: 9864}
     - Class: 114
-      Script: {instanceID: 9908}
+      Script: {instanceID: 9878}
     - Class: 114
-      Script: {instanceID: 9918}
+      Script: {instanceID: 9910}
     - Class: 114
-      Script: {instanceID: 9978}
+      Script: {instanceID: 9920}
     - Class: 114
-      Script: {instanceID: 10374}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10378}
+      Script: {instanceID: 10376}
     - Class: 114
-      Script: {instanceID: 10500}
+      Script: {instanceID: 10380}
     - Class: 114
-      Script: {instanceID: 10540}
+      Script: {instanceID: 10502}
     - Class: 114
-      Script: {instanceID: 10670}
+      Script: {instanceID: 10542}
     - Class: 114
-      Script: {instanceID: 10750}
+      Script: {instanceID: 10672}
     - Class: 114
-      Script: {instanceID: 10856}
+      Script: {instanceID: 10752}
     - Class: 114
-      Script: {instanceID: 11054}
+      Script: {instanceID: 10858}
     - Class: 114
-      Script: {instanceID: 11118}
+      Script: {instanceID: 10958}
     - Class: 114
-      Script: {instanceID: 11150}
+      Script: {instanceID: 11018}
     - Class: 114
-      Script: {instanceID: 11212}
+      Script: {instanceID: 11058}
     - Class: 114
-      Script: {instanceID: 11302}
+      Script: {instanceID: 11122}
     - Class: 114
-      Script: {instanceID: 11340}
+      Script: {instanceID: 11124}
     - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11156}
     - Class: 114
-      Script: {instanceID: 11638}
+      Script: {instanceID: 11218}
     - Class: 114
-      Script: {instanceID: 11708}
+      Script: {instanceID: 11308}
     - Class: 114
-      Script: {instanceID: 18740}
+      Script: {instanceID: 11346}
+    - Class: 114
+      Script: {instanceID: 11450}
+    - Class: 114
+      Script: {instanceID: 11644}
+    - Class: 114
+      Script: {instanceID: 11714}
+    - Class: 114
+      Script: {instanceID: 11770}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -202,6 +212,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 9f1eb6f321d18cff833aa9f25063ce94
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Signal
   - hash:
       serializedVersion: 2
       Hash: 72712369a7c681ad84fc255a5ec0b333
@@ -504,6 +520,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: e5bd414621a6341c4b8b73f4b61c5d06
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloatValue
+  - hash:
+      serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -570,7 +592,13 @@ ScriptsOnlyBuild:
     className: MoveCamera
   - hash:
       serializedVersion: 2
-      Hash: a541c84043fc3e0d48d098c0f9bf403f
+      Hash: 1d42919af832adc9c773a9185690a827
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SignalListener
+  - hash:
+      serializedVersion: 2
+      Hash: eddee12952880da09ab2830dda1b8b31
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovePlayer
@@ -732,17 +760,18 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+      Hash: 1e03d25f644a74b5d3f59684eeb61d15
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HeartManager
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 21352f0fb6139f50ca57c9d06fd55037
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FloatValue
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/tryTakeDamage/Game Zelda Like.exe
+  playerPath: "D:/\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (3)/Game
+    Zelda Like.exe"

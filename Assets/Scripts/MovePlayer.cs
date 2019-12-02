@@ -18,6 +18,8 @@ public class MovePlayer : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 change;
     private Animator animator;
+    public FloatValue currentHealth;
+    public Signal playerHealthSignal;
 
 
     // Start is called before the first frame update
@@ -76,9 +78,19 @@ public class MovePlayer : MonoBehaviour
         rb.MovePosition(transform.position + change * speed * Time.deltaTime);
     }
 
-    public void Knock(float knockTime)
+    public void Knock(float knockTime, float damage)
     {
-        StartCoroutine(KnockCo(knockTime));
+        currentHealth.runtimeValue -= damage;
+        playerHealthSignal.Raise();
+
+        if (currentHealth.runtimeValue > 0)
+        {
+            StartCoroutine(KnockCo(knockTime));         
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     private IEnumerator KnockCo(float knockTime)

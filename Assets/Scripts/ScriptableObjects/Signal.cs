@@ -9,7 +9,7 @@ public class Signal : ScriptableObject
 
     public void Raise()
     {
-        for (int i = listeners.Count; i >= 0; i--)
+        for (int i = listeners.Count - 1; i >= 0; i--)
         {
             listeners[i].OnSignalRaised();
         }
@@ -20,8 +20,8 @@ public class Signal : ScriptableObject
         listeners.Add(listener);
     }
 
-    public void DeRegisterListener()
+    public void DeRegisterListener(SignalListener listener)
     {
-
+        listeners.Remove(listener);
     }
 }

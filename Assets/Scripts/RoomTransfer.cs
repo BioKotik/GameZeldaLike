@@ -12,6 +12,7 @@ public class RoomTransfer : MonoBehaviour
     public string placeName;
     public GameObject text;
     public Text placeText;
+    public bool touch;
 
 
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class RoomTransfer : MonoBehaviour
         {
             cam.minPosition += cameraChange;
             cam.maxPosition += cameraChange;
+
             collision.transform.position += playerChange;
             if (needText)
             {
